@@ -1,3 +1,11 @@
+<!-- TOOLBAR -->
+<header>
+  <mat-toolbar color="primary">
+      <img src="../../../assets/logo.png" alt="Logo Adote-me" id="header__logo">
+      <span id="header__fav">Favoritos</span>
+  </mat-toolbar>
+</header><br>
+
 <!-- CARDS -->
 <div class="card">
   <mat-card *ngFor="let cat of cats" class="card__content">
@@ -8,7 +16,7 @@
       <img class="card__img" [src]="cat.url" mat-card-image alt="Foto do gato">
   
       <mat-card-actions>
-        <a routerLink="/details" [queryParams]="{id: cat.id}"><button mat-raised-button color="accent">Ver mais</button></a>
+        <a (click)="routeInfo(cat.id)"><button mat-raised-button color="accent">Ver mais</button></a>
         
         <button mat-icon-button color="warn" (click)="favCat(cat.id)"><mat-icon>favorite</mat-icon></button>
       </mat-card-actions>

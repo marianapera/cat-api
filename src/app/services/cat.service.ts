@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable, retry } from 'rxjs';
 
-import { AllCats } from './allcats.model';
+import { AllCats } from '../models/allcats.model';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +35,7 @@ export class CatService {
   }
 
   detalhesId(id: string): Observable<any>{
-    this.api = `${this.apiLink}/images/${id}?api_key=${this.apiKey}`;
+    this.api = `${this.apiLink}images/${id}?api_key=${this.apiKey}`;
     return this.http.get<any>(this.api);
   }
 }

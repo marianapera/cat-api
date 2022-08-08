@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AllCats } from 'src/app/shared/allcats.model';
-import { CatService } from 'src/app/shared/cat.service';
+import { AllCats } from 'src/app/models/allcats.model';
+import { CatService } from 'src/app/services/cat.service';
 
 @Component({
   selector: 'app-cards',
@@ -11,7 +11,7 @@ import { CatService } from 'src/app/shared/cat.service';
 })
 
 export class CardsComponent implements OnInit {
-  @Input('dados') cats: any;
+  cats: any;
 
   constructor(readonly catService: CatService,  private router: Router) {}
 
@@ -20,9 +20,7 @@ export class CardsComponent implements OnInit {
       (dados: AllCats) => {
         this.cats = dados;
         console.log(dados);
-      })
-
-      
+      })   
   }
 
   favCat(id: string){
@@ -32,6 +30,6 @@ export class CardsComponent implements OnInit {
   }
 
   routeInfo(id: string){
-    this.router.navigate([]);
+    this.router.navigate(['/details', id]);
   }
 }

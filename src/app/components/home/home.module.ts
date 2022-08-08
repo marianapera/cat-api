@@ -5,9 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { CardsComponent } from './cards/cards.component';
 import { HomeRoutingModule } from './home-routing.module';
-import { MaterialModule } from 'src/app/shared/material.module';
-import { DetailsComponent } from './details/details.component';
-import { HeaderModule } from '../header/header.module';
+import { MaterialModule } from 'src/app/services/material.module';
+import { DetailsComponent } from '../details/details.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -22,7 +21,6 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HomeRoutingModule,
     MaterialModule,
-    HeaderModule,
     RouterModule
   ],
   exports: [

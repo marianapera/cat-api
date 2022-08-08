@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CatService } from 'src/app/shared/cat.service';
+import { CatService } from 'src/app/services/cat.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ThisReceiver } from '@angular/compiler';
 
@@ -16,9 +16,7 @@ export class DetailsComponent implements OnInit {
   constructor(readonly catService: CatService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // this.catService.detalhesId(this.route.snapshot.params["id"]).subscribe(
-    //   dados => console.log(dados)
-    // )
+    this.catService.detalhesId(this.route.snapshot.params["id"]).subscribe()
   }
 
   // favoritos(){
@@ -29,6 +27,4 @@ export class DetailsComponent implements OnInit {
   //     }
   //   )
   // }
-
-
 }
