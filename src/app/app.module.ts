@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from '../app/components/home/home.module';
+import { FavouritesModule } from './favourites/favourites.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeModule } from '../app/components/home/home.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HomeModule
+    HomeModule,
+    FavouritesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

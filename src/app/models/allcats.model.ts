@@ -22,7 +22,7 @@ export interface Breed {
     indoor: number;
     lap?: number;
     alt_names?: string;
-    adaptability: number;
+    adaptability: number; // aqui
     affection_level: number;
     child_friendly: number;
     dog_friendly: number;

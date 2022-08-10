@@ -26,7 +26,7 @@ export class CardsComponent implements OnInit {
   favCat(id: string){
     this.catService.postFavs(id).subscribe(
       fav => console.log(fav)
-    )
+    );
   }
 
   routeInfo(id: string){

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CatService } from 'src/app/services/cat.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ThisReceiver } from '@angular/compiler';
+import { AllCats } from 'src/app/models/allcats.model';
 
 
 @Component({
@@ -11,20 +12,18 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./details.component.sass']
 })
 export class DetailsComponent implements OnInit {
-  catsFavs: any[];
-
-  constructor(readonly catService: CatService, private route: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    this.catService.detalhesId(this.route.snapshot.params["id"]).subscribe()
+  cat: any;
+  perfil: string[];
+  valor: string[];
+  
+  constructor(readonly catService: CatService, private route: ActivatedRoute) {
+    this.perfil = ['adaptability', 'intelligence', 'energy_level', 'affection_level', 'health_issues', 'dog_friendly'];
   }
 
-  // favoritos(){
-  //   this.catService.allFavs().subscribe(
-  //     favs => {
-  //       this.catsFavs = favs;
-  //       console.log(favs);
-  //     }
-  //   )
-  // }
+  ngOnInit(): void {
+    this.catService.detailsId(this.route.snapshot.params["id"]).subscribe((info: AllCats) => {
+        this.cat = info;
+        console.log(info);
+      })
+  }
 }

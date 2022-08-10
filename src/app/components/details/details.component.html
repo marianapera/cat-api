@@ -1,1 +1,57 @@
-<p>works</p>
+<app-toolbar></app-toolbar>
+
+<!-- IMG AND CONTENT -->
+<section class="cat">
+    <img class="cat__img" [src]="cat.url">
+    
+    <div class="cat__content">
+        <h1 class="cat__title">{{cat.breeds[0].name}}</h1><br>
+
+        <h3 class="cat__subtitle">Origem</h3>
+        <p class="cat__txt">{{cat.breeds[0].origin}}</p>
+        
+        <h3 class="cat__subtitle">Temperamento</h3>
+        <p class="cat__txt">{{cat.breeds[0].temperament}}</p>
+        
+        <h3 class="cat__subtitle">Descrição</h3>
+        <p class="cat__txt">{{cat.breeds[0].description}}</p>
+        
+        <h3 class="cat__subtitle">Expectativa de vida</h3>
+        <p class="cat__txt">{{cat.breeds[0].life_span}} anos</p>
+    </div>
+</section><br>
+
+<!-- CAT'S PERSONALITY -->
+<h2 class="cat__title2">Personalidade</h2>
+<section class="progress" style="display: flex; column-gap: 4rem;">
+    <div class="progress__bloco">
+        <div class="progress__items">
+            <p>Adaptabilidade: {{cat.breeds[0].adaptability/5 | percent}}</p>
+            <mat-progress-bar class="cat__progress-bar" color="primary" mode="determinate" value="{{cat.breeds[0].adaptability*20}}"></mat-progress-bar>
+        </div>
+        <div class="progress__items">
+            <p>Inteligência: {{cat.breeds[0].intelligence/5 | percent}}</p>
+            <mat-progress-bar class="cat__progress-bar" color="primary" mode="determinate" value="{{cat.breeds[0].intelligence*20}}"></mat-progress-bar>
+        </div>
+        <div class="progress__items">
+            <p>Energia: {{cat.breeds[0].energy_level/5 | percent}}</p>
+            <mat-progress-bar class="cat__progress-bar" color="primary" mode="determinate" value="{{cat.breeds[0].energy_level*20}}"></mat-progress-bar>
+        </div>
+    </div>
+
+    <div class="progress__bloco">
+        <div class="progress__items">
+            <p>Carinhoso: {{cat.breeds[0].affection_level/5 | percent}}</p>
+            <mat-progress-bar class="cat__progress-bar" color="primary" mode="determinate" value="{{cat.breeds[0].affection_level*20}}"></mat-progress-bar>
+        </div>
+        <div class="progress__items">
+            <p>Problemas de saúde: {{cat.breeds[0].health_issues/5 | percent}}</p>
+            <mat-progress-bar class="cat__progress-bar" color="primary" mode="determinate" value="{{cat.breeds[0].health_issues*20}}"></mat-progress-bar>
+        </div>
+        <div class="progress__items">
+            <p>Amigável com cachorros: {{cat.breeds[0].dog_friendly/5 | percent}}</p>
+            <mat-progress-bar class="cat__progress-bar" color="primary" mode="determinate" value="{{cat.breeds[0].dog_friendly*20}}"></mat-progress-bar>
+        </div>
+    </div>
+</section>
+<br><br>

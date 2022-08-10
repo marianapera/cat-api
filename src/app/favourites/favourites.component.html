@@ -1,0 +1,10 @@
+<app-toolbar></app-toolbar>
+
+<h1>Gatinhos favoritos!</h1><br>
+
+<main class="cat">
+    <div *ngFor="let fav of favs" class="cat__content">
+        <img [src]="fav.image.url" alt="Imagem do gato favorito" class="cat__img">
+        <button mat-raised-button color="warn" class="cat__button-del" (click)="deleteFav(fav.id)">Deletar</button>
+    </div>
+</main>
