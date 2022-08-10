@@ -26,4 +26,10 @@ export class DetailsComponent implements OnInit {
         console.log(info);
       })
   }
+
+  favCat(id: string){
+    this.catService.postFavs(id).subscribe(
+      fav => console.log(fav)
+    );
+  }
 }

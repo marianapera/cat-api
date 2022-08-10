@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CatService } from '../services/cat.service';
 
@@ -11,7 +12,7 @@ import { CatService } from '../services/cat.service';
 export class FavouritesComponent implements OnInit {
   favs: any;
 
-  constructor(private catService: CatService) { }
+  constructor(private catService: CatService, private router: Router) { }
 
   ngOnInit(): void {
     this.catService.allFavs().subscribe(
@@ -26,5 +27,9 @@ export class FavouritesComponent implements OnInit {
           (fav)=> this.favs = fav
         )}
     )
+  }
+
+  routerInfo(id: string){
+    this.router.navigate(['/details', id]);
   }
 }

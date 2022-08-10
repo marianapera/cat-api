@@ -11,7 +11,7 @@ import { ToolbarModule } from '../components/toolbar/toolbar.module';
   imports: [
     CommonModule,
     MaterialModule,
-    ToolbarModule
+    ToolbarModule,
   ],
   exports: [FavouritesComponent]
 })

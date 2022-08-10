@@ -5,7 +5,12 @@
     <img class="cat__img" [src]="cat.url">
     
     <div class="cat__content">
-        <h1 class="cat__title">{{cat.breeds[0].name}}</h1><br>
+        <div class="cat__fav">
+            <h1 class="cat__title">{{cat.breeds[0].name}}</h1>
+            <button class="cat__fav-button" mat-icon-button color="warn" (click)="favCat(cat.id)">
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div><br>
 
         <h3 class="cat__subtitle">Origem</h3>
         <p class="cat__txt">{{cat.breeds[0].origin}}</p>
